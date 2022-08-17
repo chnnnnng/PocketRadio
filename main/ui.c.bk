@@ -1,0 +1,165 @@
+// SquareLine LVGL GENERATED FILE
+// EDITOR VERSION: SquareLine Studio 1.0.5
+// LVGL VERSION: 8.2
+// PROJECT: Radio8266
+
+#include "ui.h"
+#include "ui_helpers.h"
+
+///////////////////// VARIABLES ////////////////////
+lv_obj_t * ui_fmscreen;
+lv_obj_t * ui_fmroller;
+lv_obj_t * ui_timelabel;
+lv_obj_t * ui_volbar;
+lv_obj_t * ui_searchscreen;
+lv_obj_t * ui_scanspinner;
+lv_obj_t * ui_scanprogresslabel;
+lv_obj_t * ui_channelcountlabel;
+
+///////////////////// TEST LVGL SETTINGS ////////////////////
+#if LV_COLOR_DEPTH != 16
+    #error "LV_COLOR_DEPTH should be 16bit to match SquareLine Studio's settings"
+#endif
+#if LV_COLOR_16_SWAP !=0
+    #error "#error LV_COLOR_16_SWAP should be 0 to match SquareLine Studio's settings"
+#endif
+
+///////////////////// ANIMATIONS ////////////////////
+
+///////////////////// FUNCTIONS ////////////////////
+
+///////////////////// SCREENS ////////////////////
+void ui_fmscreen_screen_init(void)
+{
+
+    // ui_fmscreen
+
+    ui_fmscreen = lv_obj_create(NULL);
+
+    lv_obj_clear_flag(ui_fmscreen, LV_OBJ_FLAG_SCROLLABLE);
+
+    lv_obj_set_style_bg_color(ui_fmscreen, lv_color_hex(0x051937), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_fmscreen, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui_fmscreen, LV_GRAD_DIR_VER, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    // ui_fmroller
+
+    ui_fmroller = lv_roller_create(ui_fmscreen);
+    lv_roller_set_options(ui_fmroller, "FM 87.5\nFM 93.0\nFM 96.8", LV_ROLLER_MODE_NORMAL);
+
+    lv_obj_set_height(ui_fmroller, 100);
+    lv_obj_set_width(ui_fmroller, LV_SIZE_CONTENT);
+
+    lv_obj_set_x(ui_fmroller, 0);
+    lv_obj_set_y(ui_fmroller, 0);
+
+    lv_obj_set_align(ui_fmroller, LV_ALIGN_CENTER);
+
+    lv_obj_set_style_text_color(ui_fmroller, lv_color_hex(0x051937), LV_PART_SELECTED | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_fmroller, 255, LV_PART_SELECTED | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_fmroller, lv_color_hex(0xA8EB12), LV_PART_SELECTED | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_fmroller, 255, LV_PART_SELECTED | LV_STATE_DEFAULT);
+
+    // ui_timelabel
+
+    ui_timelabel = lv_label_create(ui_fmscreen);
+
+    lv_obj_set_width(ui_timelabel, LV_SIZE_CONTENT);
+    lv_obj_set_height(ui_timelabel, LV_SIZE_CONTENT);
+
+    lv_obj_set_x(ui_timelabel, 0);
+    lv_obj_set_y(ui_timelabel, 0);
+
+    lv_obj_set_align(ui_timelabel, LV_ALIGN_TOP_MID);
+
+    lv_label_set_text(ui_timelabel, "23:56");
+
+    // ui_volbar
+
+    ui_volbar = lv_bar_create(ui_fmscreen);
+    lv_bar_set_range(ui_volbar, 0, 100);
+    lv_bar_set_value(ui_volbar, 0, LV_ANIM_OFF);
+
+    lv_obj_set_width(ui_volbar, 120);
+    lv_obj_set_height(ui_volbar, 10);
+
+    lv_obj_set_x(ui_volbar, 0);
+    lv_obj_set_y(ui_volbar, -5);
+
+    lv_obj_set_align(ui_volbar, LV_ALIGN_BOTTOM_MID);
+
+    lv_obj_set_style_bg_color(ui_volbar, lv_color_hex(0xA8EB12), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_volbar, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+
+}
+void ui_searchscreen_screen_init(void)
+{
+
+    // ui_searchscreen
+
+    ui_searchscreen = lv_obj_create(NULL);
+
+    lv_obj_clear_flag(ui_searchscreen, LV_OBJ_FLAG_SCROLLABLE);
+
+    lv_obj_set_style_bg_color(ui_searchscreen, lv_color_hex(0x051937), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_searchscreen, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui_searchscreen, LV_GRAD_DIR_VER, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    // ui_scanspinner
+
+    ui_scanspinner = lv_spinner_create(ui_searchscreen, 1000, 90);
+
+    lv_obj_set_width(ui_scanspinner, 80);
+    lv_obj_set_height(ui_scanspinner, 80);
+
+    lv_obj_set_x(ui_scanspinner, 0);
+    lv_obj_set_y(ui_scanspinner, 0);
+
+    lv_obj_set_align(ui_scanspinner, LV_ALIGN_CENTER);
+
+    lv_obj_clear_flag(ui_scanspinner, LV_OBJ_FLAG_CLICKABLE);
+
+    lv_obj_set_style_arc_color(ui_scanspinner, lv_color_hex(0xA8EB12), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_opa(ui_scanspinner, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+
+    // ui_scanprogresslabel
+
+    ui_scanprogresslabel = lv_label_create(ui_searchscreen);
+
+    lv_obj_set_width(ui_scanprogresslabel, LV_SIZE_CONTENT);
+    lv_obj_set_height(ui_scanprogresslabel, LV_SIZE_CONTENT);
+
+    lv_obj_set_x(ui_scanprogresslabel, 0);
+    lv_obj_set_y(ui_scanprogresslabel, 0);
+
+    lv_obj_set_align(ui_scanprogresslabel, LV_ALIGN_CENTER);
+
+    lv_label_set_text(ui_scanprogresslabel, "0%");
+
+    // ui_channelcountlabel
+
+    ui_channelcountlabel = lv_label_create(ui_searchscreen);
+
+    lv_obj_set_width(ui_channelcountlabel, LV_SIZE_CONTENT);
+    lv_obj_set_height(ui_channelcountlabel, LV_SIZE_CONTENT);
+
+    lv_obj_set_x(ui_channelcountlabel, 0);
+    lv_obj_set_y(ui_channelcountlabel, -5);
+
+    lv_obj_set_align(ui_channelcountlabel, LV_ALIGN_BOTTOM_MID);
+
+    lv_label_set_text(ui_channelcountlabel, "find 0 channel");
+
+}
+
+void ui_init(void)
+{
+    lv_disp_t * dispp = lv_disp_get_default();
+    lv_theme_t * theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED),
+                                               true, LV_FONT_DEFAULT);
+    lv_disp_set_theme(dispp, theme);
+    ui_fmscreen_screen_init();
+    ui_searchscreen_screen_init();
+    lv_disp_load_scr(ui_searchscreen);
+}
+

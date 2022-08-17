@@ -1,0 +1,11 @@
+{
+  "C_Cpp.intelliSenseEngine": "Tag Parser",
+  "files.associations": {
+    "spi_master.h": "c",
+    "esp_lcd_panel_vendor.h": "c",
+    "*.ipp": "c",
+    "adc.h": "c",
+    "fm.h": "c",
+    "network.h": "c"
+  }
+}
